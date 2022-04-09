@@ -14,15 +14,15 @@ class _SplashScreenState extends State<SplashScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        backgroundColor: AppColors.background,
+        backgroundColor: AppColors.blue,
         elevation: 0,
         systemOverlayStyle: const SystemUiOverlayStyle(
           statusBarColor: AppColors.background,
-          statusBarIconBrightness: Brightness.light,
-          statusBarBrightness: Brightness.dark,
+          statusBarIconBrightness: Brightness.dark,
+          statusBarBrightness: Brightness.light,
         ),
       ),
-      backgroundColor: AppColors.background,
+      backgroundColor: AppColors.blue,
       body: SizedBox(
         width: double.infinity,
         height: double.infinity,
@@ -35,7 +35,7 @@ class _SplashScreenState extends State<SplashScreen> {
               child: Container(
                 alignment: Alignment.center,
                 child: Image.asset(
-                  'assets/images/splash.png',
+                  'assets/images/main_logo.png',
                   height: 220,
                 ),
               ),

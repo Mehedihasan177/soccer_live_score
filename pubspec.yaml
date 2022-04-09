@@ -86,7 +86,7 @@ flutter_icons:
   android: "ic_launcher"
   ios: true
   remove_alpha_ios: true
-  image_path: "assets/images/logo.png"
+  image_path: "assets/images/main_logo.png"
 
 # The following section is specific to Flutter.
 flutter:
@@ -101,7 +101,7 @@ flutter:
     - assets/
     - assets/images/
     - assets/icons/
-    - assets/images/languages.png
+    - assets/images/main_logo.png
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware.
