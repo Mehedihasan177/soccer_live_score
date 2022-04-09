@@ -29,6 +29,14 @@ myAppBar(String Name, actions, bottom) {
     // backgroundColor: mainAppColor,
     actions: actions,
     bottom: TabBar(
+        isScrollable: true, // Required
+        // unselectedLabelColor: Colors.white30, // Other tabs color
+        // labelPadding: EdgeInsets.symmetric(horizontal: 30), // Space between tabs
+        // indicator: UnderlineTabIndicator(
+        //   // borderSide: BorderSide(color: Colors.white, width: 14,), // Indicator height
+        //   // insets: EdgeInsets.symmetric(horizontal: 48), // Indicator width
+        // ),
+        indicatorColor: Colors.white,
         labelColor: Colors.white,
         tabs: bottom),
   );
