@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "933038733461",
+    "project_id": "big-soccer",
+    "storage_bucket": "big-soccer.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:933038733461:android:4097f5d64885c3fd09839c",
+        "android_client_info": {
+          "package_name": "com.joker123usd.bigsoccer"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "933038733461-s834u2k8be74or6hlffvgi0kdfjoaksn.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAQMinHmwYow1oG3wdR--P7rnaikduaA2U"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "933038733461-s834u2k8be74or6hlffvgi0kdfjoaksn.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
