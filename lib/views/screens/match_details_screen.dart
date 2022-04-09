@@ -56,7 +56,7 @@ class _MatchDetailsScreenState extends State<MatchDetailsScreen>
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: AppColors.background3,
+      backgroundColor: AppColors.blue,
       key: _scaffoldKey,
       body: DefaultTabController(
         length: 3,

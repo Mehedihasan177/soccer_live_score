@@ -5,6 +5,7 @@ import 'package:flutter_html/flutter_html.dart';
 import 'package:marquee/marquee.dart';
 import 'package:url_launcher/url_launcher.dart';
 
+import '../../consts/app_colors.dart';
 import '../../services/custom_ad/custom_ad.dart';
 
 class PredictionDetailsScreen extends StatefulWidget {
@@ -20,7 +21,7 @@ class _PredictionDetailsScreenState extends State<PredictionDetailsScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.black,
+      backgroundColor:AppColors.blue,
       appBar: AppBar(
         backgroundColor: Colors.transparent,
         title: widget.arguments['title'].length > 25

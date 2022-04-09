@@ -45,7 +45,7 @@ class _MatchPreviewScreenState extends State<MatchPreviewScreen>
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: AppColors.background3,
+      backgroundColor: AppColors.blue,
       key: _scaffoldKey,
       body: NestedScrollView(
         headerSliverBuilder: (BuildContext context, bool innerBoxIsScrolled) {

@@ -19,6 +19,7 @@ class _LanguageScreenState extends State<LanguageScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: AppColors.blue,
       appBar: AppBar(
         elevation: 0,
         backgroundColor: AppColors.blue,
@@ -80,7 +81,7 @@ class LanguageWidget extends StatelessWidget {
           border: Border(
             bottom: BorderSide(
               width: 0.2,
-              color: Colors.grey.shade600,
+              color: Colors.white,
             ),
           ),
         ),
@@ -91,14 +92,16 @@ class LanguageWidget extends StatelessWidget {
                 name,
                 style: TextStyle(
                   fontSize: 16,
-                  color: Theme.of(context).textTheme.bodyText2!.color,
+                  // color: Theme.of(context).textTheme.bodyText2!.color,
+                  color: Colors.white
                 ),
               ),
               if (isSelected)
                 Icon(
                   Icons.check,
                   size: 20,
-                  color: Theme.of(context).textTheme.bodyText2!.color,
+                  // color: Theme.of(context).textTheme.bodyText2!.color,
+                  color: Colors.white,
                 ),
             ],
           ),
