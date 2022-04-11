@@ -67,10 +67,17 @@ class _OtpScreenState extends State<OtpScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       resizeToAvoidBottomInset: false,
-      backgroundColor: AppColors.background,
+      backgroundColor: AppColors.blue,
+      appBar: PreferredSize(
+        preferredSize: new Size(0.0, 0.0),
+        child: AppBar(
+          systemOverlayStyle: AppStyles.appbarOverlay(),
+          backgroundColor: Colors.transparent,
+        ),
+      ),
       body: SafeArea(
         child: Padding(
-          padding: const EdgeInsets.symmetric(vertical: 24, horizontal: 20),
+          padding: const EdgeInsets.symmetric(vertical: 0, horizontal: 20),
           child: SingleChildScrollView(
             child: SizedBox(
               width: double.infinity,
@@ -81,10 +88,13 @@ class _OtpScreenState extends State<OtpScreen> {
                     alignment: Alignment.topLeft,
                     child: GestureDetector(
                       onTap: () => Navigator.pop(context),
-                      child: Icon(
-                        Icons.arrow_back,
-                        size: AppSizes.size20,
-                        color: Colors.black,
+                      child: Padding(
+                        padding: const EdgeInsets.only(top: 10),
+                        child: Icon(
+                          Icons.arrow_back,
+                          size: AppSizes.size20,
+                          color: Colors.white,
+                        ),
                       ),
                     ),
                   ),
@@ -95,7 +105,7 @@ class _OtpScreenState extends State<OtpScreen> {
                     width: 200,
                     height: 200,
                     decoration: BoxDecoration(
-                      color: AppColors.primaryColor.withOpacity(0.1),
+                      color: AppColors.primaryColor,
                       shape: BoxShape.circle,
                     ),
                     child: Image.asset(
@@ -108,7 +118,7 @@ class _OtpScreenState extends State<OtpScreen> {
                   Text(
                     'Confirm Phone Number'.tr,
                     style: const TextStyle(
-                      color: Colors.black,
+                      color: Colors.white,
                       fontSize: 22,
                       fontWeight: FontWeight.bold,
                     ),
@@ -121,7 +131,7 @@ class _OtpScreenState extends State<OtpScreen> {
                         widget.arguments['phone'],
                     style: const TextStyle(
                       fontSize: 14,
-                      color: Colors.black,
+                      color: Colors.white,
                       fontWeight: FontWeight.bold,
                     ),
                     textAlign: TextAlign.center,
@@ -132,7 +142,7 @@ class _OtpScreenState extends State<OtpScreen> {
                   Container(
                     padding: const EdgeInsets.all(28),
                     decoration: BoxDecoration(
-                      color: Colors.black.withOpacity(0.05),
+                      color: Colors.white,
                       borderRadius: BorderRadius.circular(12),
                     ),
                     child: Form(
@@ -224,11 +234,11 @@ class _OtpScreenState extends State<OtpScreen> {
                                             color: Colors.black,
                                           ),
                                         )
-                                      : const SizedBox(
+                                      : SizedBox(
                                           width: 24,
                                           height: 24,
                                           child: CircularProgressIndicator(
-                                            color: Colors.black,
+                                            color: AppColors.blue
                                           ),
                                         ),
                                 );

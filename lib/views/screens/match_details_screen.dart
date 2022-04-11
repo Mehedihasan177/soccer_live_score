@@ -309,7 +309,7 @@ class _MatchDetailsScreenState extends State<MatchDetailsScreen>
             ];
           },
           body: Container(
-            decoration: BoxDecoration(color: AppColors.background),
+            decoration: BoxDecoration(color: AppColors.blue),
             child: Obx(() {
               return TabBarView(
                 physics: const NeverScrollableScrollPhysics(),

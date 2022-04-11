@@ -1,5 +1,7 @@
 // ignore_for_file: avoid_unnecessary_containers, sized_box_for_whitespace
 
+import 'dart:ui';
+
 import 'package:big_soccer/views/screens/prediction_details_screen.dart';
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:carousel_slider/carousel_slider.dart';
@@ -73,7 +75,7 @@ class _PredictionScreenState extends State<PredictionScreen> {
                                     });
                                   },
                                   child: Card(
-                                    color: AppColors.background2,
+                                    color: AppColors.blue,
                                     child: Container(
                                       child: Column(
                                         crossAxisAlignment:
@@ -83,7 +85,7 @@ class _PredictionScreenState extends State<PredictionScreen> {
                                             decoration: BoxDecoration(
                                               color: AppColors.background2,
                                               borderRadius:
-                                                  BorderRadius.circular(10),
+                                                  BorderRadius.only(bottomRight: Radius.circular(10), bottomLeft: Radius.circular(10)),
                                             ),
                                             margin: const EdgeInsets.only(
                                                 bottom: 10),
@@ -420,7 +422,7 @@ class _PredictionScreenState extends State<PredictionScreen> {
                         child: Text(
                           'No prediction available.'.tr,
                           style: TextStyle(
-                            color: AppColors.text,
+                            color: AppColors.text2,
                             fontWeight: FontWeight.w400,
                             fontSize: AppSizes.size16,
                           ),

@@ -13,5 +13,6 @@ class AppColors {
   static Color selected = Colors.redAccent;
 
   static Color background3 = Colors.grey.withOpacity(0.1);
-  static Color blue = HexColor("#0B0B45");
+  static Color blue = HexColor("#f8f8ff");
+  static Color blue1 = HexColor("#0B0B45");
 }

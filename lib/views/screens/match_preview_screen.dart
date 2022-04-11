@@ -88,7 +88,7 @@ class _MatchPreviewScreenState extends State<MatchPreviewScreen>
                     constraints: const BoxConstraints(maxHeight: 165),
                     padding: const EdgeInsets.symmetric(
                         horizontal: 20, vertical: 15),
-                    decoration: const BoxDecoration(
+                    decoration: BoxDecoration(
                       color: AppColors.background,
                     ),
                     child: Column(

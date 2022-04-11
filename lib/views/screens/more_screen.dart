@@ -2,6 +2,7 @@ import 'package:big_soccer/services/language_changes/language_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import '../../controllers/auth_controller.dart';
+import '../../services/language_changes/localization_service.dart';
 import '../widgets/menu_widgets.dart';
 import '/consts/consts.dart';
 import '/controllers/setting_controller.dart';
@@ -56,9 +57,9 @@ class _MoreScreenState extends State<MoreScreen> {
             margin: const EdgeInsets.only(bottom: 6),
             padding: const EdgeInsets.symmetric(vertical: 6),
             child: Text(
-              "Settings".tr,
+              "Language".tr,
               style: TextStyle(
-                color: Colors.white,
+                color: Colors.black,
                 fontSize: AppSizes.size16,
                 fontWeight: FontWeight.bold,
               ),
@@ -74,13 +75,30 @@ class _MoreScreenState extends State<MoreScreen> {
                 ),
               ],
             ),
-            child: MenuItem2(
-              icon: AppAssets.Languages,
-              menuName: "Language".tr,
-              callback: () {
-                Get.to(LanguageScreen());
-              },
-            ),
+            child: ListView.separated(
+                    shrinkWrap: true,
+                    //controller: _scrollController,
+                    itemCount: LocalizationService.langs.length,
+                    itemBuilder: (context, index) {
+                      var data = LocalizationService.langs[index];
+
+                      return LanguageWidget(
+                        name: data,
+                        isSelected: data == settingController.currentLanguage.value,
+                        callback: () {
+                          settingController.currentLanguage.value = data;
+                          LocalizationService().changeLocale(data);
+                        },
+                      );
+                    },
+              separatorBuilder: (BuildContext context, int index) { return Container(
+              margin: const EdgeInsets.symmetric(vertical: 6),
+              height: 0.1,
+              color: Colors.black,
+            ); },
+                  ),
+
+
           ),
 
           Container(
@@ -89,7 +107,7 @@ class _MoreScreenState extends State<MoreScreen> {
             child: Text(
               "Visit".tr,
               style: TextStyle(
-                color: Colors.white,
+                color: Colors.black,
                 fontSize: AppSizes.size16,
                 fontWeight: FontWeight.bold,
               ),
@@ -149,7 +167,7 @@ class _MoreScreenState extends State<MoreScreen> {
             child: Text(
               "Support".tr,
               style: TextStyle(
-                color: Colors.white,
+                color: Colors.black,
                 fontSize: AppSizes.size16,
                 fontWeight: FontWeight.bold,
               ),
@@ -223,6 +241,71 @@ class _MoreScreenState extends State<MoreScreen> {
             ),
           ),
         ],
+      ),
+    );
+  }
+
+}
+class LanguageWidget extends StatelessWidget {
+  const LanguageWidget({
+    Key? key,
+    required this.isSelected,
+    required this.name,
+    this.callback,
+  }) : super(key: key);
+
+  final bool isSelected;
+  final String name;
+  final callback;
+
+  @override
+  Widget build(BuildContext context) {
+    return InkWell(
+      onTap: callback,
+      child: Container(
+        padding: const EdgeInsets.symmetric(
+          vertical: 10,
+        ).copyWith(right: 15, left: 5),
+        margin: const EdgeInsets.only(left: 3),
+        decoration: BoxDecoration(
+          border: Border(
+            bottom: BorderSide(
+              width: 0.2,
+              color: Colors.white,
+            ),
+          ),
+        ),
+        child: Row(
+          mainAxisAlignment: MainAxisAlignment.start,
+          children: [
+            Expanded(
+                flex: 1,
+                child: Image.asset(AppAssets.Languages,height: 30,)),
+            SizedBox(width: 10,),
+            Expanded(
+              flex: 10,
+              child: Text(
+                name,
+                style: TextStyle(
+                    fontSize: 16,
+                    // color: Theme.of(context).textTheme.bodyText2!.color,
+                    color: Colors.black
+                ),
+              ),
+            ),
+            if (isSelected)
+              Expanded(
+                flex: 1,
+                child: Icon(
+                  Icons.check,
+                  size: 20,
+                  // color: Theme.of(context).textTheme.bodyText2!.color,
+                  color: Colors.black,
+                ),
+              ),
+          ],
+        ),
+
       ),
     );
   }

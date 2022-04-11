@@ -23,6 +23,7 @@ class _PredictionDetailsScreenState extends State<PredictionDetailsScreen> {
     return Scaffold(
       backgroundColor:AppColors.blue,
       appBar: AppBar(
+        leading: BackButton(color: Colors.black,),
         backgroundColor: Colors.transparent,
         title: widget.arguments['title'].length > 25
             ? SizedBox(
@@ -30,7 +31,7 @@ class _PredictionDetailsScreenState extends State<PredictionDetailsScreen> {
                 child: Marquee(
                   text: widget.arguments['title'],
                   style: const TextStyle(
-                      fontWeight: FontWeight.bold, fontSize: 15),
+                      fontWeight: FontWeight.bold, fontSize: 15, color: Colors.black),
                   scrollAxis: Axis.horizontal,
                   crossAxisAlignment: CrossAxisAlignment.start,
                   blankSpace: 20.0,
@@ -52,7 +53,7 @@ class _PredictionDetailsScreenState extends State<PredictionDetailsScreen> {
           data: widget.arguments['prediction_details'] ?? ' ',
           style: {
             "*": Style(
-              color: Colors.white,
+              color: Colors.black,
               textAlign: TextAlign.justify,
               fontWeight: FontWeight.normal,
             ),

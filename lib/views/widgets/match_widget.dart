@@ -247,7 +247,7 @@ class MatchWidget extends StatelessWidget {
     Get.bottomSheet(
       Container(
         height: AppSizes.newSize(30),
-        decoration: const BoxDecoration(
+        decoration: BoxDecoration(
           borderRadius: BorderRadius.only(
             topLeft: Radius.circular(15),
             topRight: Radius.circular(15),

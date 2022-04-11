@@ -25,14 +25,17 @@ class _PhoneScreenState extends State<PhoneScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       resizeToAvoidBottomInset: false,
-      // appBar: AppBar(
-      //   systemOverlayStyle: AppStyles.appbarOverlay(),
-      //   backgroundColor: Colors.transparent,
-      // ),
-      backgroundColor: AppColors.background,
+      appBar: PreferredSize(
+        preferredSize: new Size(0.0, 0.0),
+        child: AppBar(
+          systemOverlayStyle: AppStyles.appbarOverlay(),
+          backgroundColor: Colors.transparent,
+        ),
+      ),
+      backgroundColor: AppColors.blue,
       body: SafeArea(
         child: Padding(
-          padding: const EdgeInsets.symmetric(vertical: 24, horizontal: 20),
+          padding: const EdgeInsets.symmetric(vertical: 0, horizontal: 20),
           child: SingleChildScrollView(
             child: SizedBox(
               width: double.infinity,
@@ -48,7 +51,7 @@ class _PhoneScreenState extends State<PhoneScreen> {
                       width: 200,
                       height: 200,
                       decoration: BoxDecoration(
-                        color: AppColors.primaryColor.withOpacity(0.1),
+                        color: AppColors.primaryColor,
                         shape: BoxShape.circle,
                       ),
                       child: Image.asset(
@@ -63,7 +66,7 @@ class _PhoneScreenState extends State<PhoneScreen> {
                         'Get started with '.tr +
                             settingController.appName.value,
                         style: const TextStyle(
-                          color: Colors.black,
+                          color: Colors.white,
                           fontSize: 22,
                           fontWeight: FontWeight.bold,
                         ),
@@ -76,7 +79,7 @@ class _PhoneScreenState extends State<PhoneScreen> {
                       "Add your phone number. we'll send you a verification code so we know you're real"
                           .tr,
                       style: const TextStyle(
-                        color: Colors.black,
+                        color: Colors.white,
                         fontSize: 14,
                         fontWeight: FontWeight.bold,
                       ),
@@ -88,7 +91,7 @@ class _PhoneScreenState extends State<PhoneScreen> {
                     Container(
                       padding: const EdgeInsets.all(28),
                       decoration: BoxDecoration(
-                        color: Colors.black.withOpacity(0.05),
+                        color: Colors.white,
                         borderRadius: BorderRadius.circular(12),
                       ),
                       child: Column(
@@ -201,11 +204,11 @@ class _PhoneScreenState extends State<PhoneScreen> {
                                             color: Colors.black,
                                           ),
                                         )
-                                      : const SizedBox(
+                                      :  SizedBox(
                                           width: 24,
                                           height: 24,
                                           child: CircularProgressIndicator(
-                                            color: Colors.black,
+                                            color: AppColors.blue
                                           ),
                                         ),
                                 );

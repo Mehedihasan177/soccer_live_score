@@ -1,6 +1,7 @@
 import 'package:big_soccer/views/screens/live_match_screen.dart';
 import 'package:big_soccer/views/screens/more_screen.dart';
 import 'package:big_soccer/views/screens/prediction_screen.dart';
+import 'package:double_back_to_close_app/double_back_to_close_app.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:get/get.dart';
@@ -51,55 +52,76 @@ class _ParentScreenState extends State<ParentScreen> {
       length: 6,
       child: Scaffold(
         key: _scaffoldKey,
-        appBar: myAppBar("Big Soccer",null, [Tab(icon: Image.asset(
+        appBar: myAppBar("Big Soccer",null, [
+          Tab(
+          iconMargin: EdgeInsets.only(bottom: 2),
+              icon: Image.asset(
           'assets/images/home.png',
-          height: 22,
-          width: 22,
+          height: 18,
+          width:  18,
           color: Colors.white,
-        ), text: "Home"),
+        ),
+            child: GlobalText("Home".tr),
+          ),
           if ((settingsController.appPublishingControl.value))
-            Tab(icon: Image.asset(
+            Tab(
+                iconMargin: EdgeInsets.only(bottom: 2),
+                icon: Image.asset(
               'assets/images/video.png',
-              height: 22,
-              width: 22,
+              height: 18,
+              width: 18,
               color: Colors.white,
-            ), text: "Live"),
-          Tab(icon: Image.asset(
+            ),  child: GlobalText("Live".tr),),
+          Tab(
+              iconMargin: EdgeInsets.only(bottom: 2),
+              icon: Image.asset(
             'assets/images/prediction.png',
-            height: 22,
-            width: 22,
+            height: 18,
+            width: 18,
             color: Colors.white,
-          ), text: "Prediction"),
-          Tab(icon: Image.asset(
+          ), child: GlobalText("Prediction".tr),),
+          Tab(
+              iconMargin: EdgeInsets.only(bottom: 2),
+              icon: Image.asset(
             'assets/images/standings.png',
-            height: 22,
-            width: 22,
+            height: 18,
+            width:  18,
             color: Colors.white,
-          ), text: "Standings"),
-          Tab(icon: Image.asset(
+          ),  child: GlobalText("Standings".tr),),
+          Tab(
+              iconMargin: EdgeInsets.only(bottom: 2),
+              icon: Image.asset(
             'assets/images/news.png',
-            height: 22,
-            width: 22,
+            height: 18,
+            width:  18,
             color: Colors.white,
-          ), text: "News"),
-          Tab(icon: Image.asset(
+          ),  child: GlobalText("News".tr),),
+          Tab(
+              iconMargin: EdgeInsets.only(bottom: 2),
+              icon: Image.asset(
             'assets/images/more.png',
-            height: 22,
-            width: 22,
+            height: 18,
+            width:  18,
             color: Colors.white,
-          ), text: "More"),]),
-        body:  Container(
-          child: TabBarView(
-            physics: NeverScrollableScrollPhysics(),
-            children: [
-              const HomeScreen(),
-              if ((settingsController.appPublishingControl.value))
-                const LiveMatchScreen(),
-              const PredictionScreen(),
-              const StandingLeaguesScreen(),
-              const NewsScreen(),
-              const MoreScreen(),
-            ],
+          ),  child: GlobalText("More".tr),),]),
+        body:  DoubleBackToCloseApp(
+          snackBar: SnackBar(
+            backgroundColor: Colors.white,
+            content: Text('Press again to close the app.', style: TextStyle(color: Colors.black, fontWeight: FontWeight.bold),),
+          ),
+          child: Container(
+            child: TabBarView(
+              physics: NeverScrollableScrollPhysics(),
+              children: [
+                const HomeScreen(),
+                if ((settingsController.appPublishingControl.value))
+                  const LiveMatchScreen(),
+                const PredictionScreen(),
+                const StandingLeaguesScreen(),
+                const NewsScreen(),
+                const MoreScreen(),
+              ],
+            ),
           ),
         ),
         // bottomNavigationBar: Theme(

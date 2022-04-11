@@ -61,7 +61,7 @@ Widget newsItemWidget(context, News newsItem) {
     },
     child: Container(
       margin: const EdgeInsets.symmetric(
-        vertical: 6,
+        vertical: 3,
         horizontal: 6,
       ),
       decoration: BoxDecoration(

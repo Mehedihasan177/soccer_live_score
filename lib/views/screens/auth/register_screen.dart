@@ -24,10 +24,17 @@ class _RegisterScreenState extends State<RegisterScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       resizeToAvoidBottomInset: false,
-      backgroundColor: AppColors.background,
+      backgroundColor: AppColors.blue,
+      appBar: PreferredSize(
+        preferredSize: new Size(0.0, 0.0),
+        child: AppBar(
+          systemOverlayStyle: AppStyles.appbarOverlay(),
+          backgroundColor: Colors.transparent,
+        ),
+      ),
       body: SafeArea(
         child: Padding(
-          padding: const EdgeInsets.symmetric(vertical: 24, horizontal: 20),
+          padding: const EdgeInsets.symmetric(vertical: 0, horizontal: 20),
           child: SingleChildScrollView(
             child: SizedBox(
               width: double.infinity,
@@ -40,10 +47,13 @@ class _RegisterScreenState extends State<RegisterScreen> {
                       alignment: Alignment.topLeft,
                       child: GestureDetector(
                         onTap: () => Navigator.pop(context),
-                        child: Icon(
-                          Icons.arrow_back,
-                          size: AppSizes.size20,
-                          color: AppColors.text,
+                        child: Padding(
+                          padding: const EdgeInsets.only(top: 10),
+                          child: Icon(
+                            Icons.arrow_back,
+                            size: AppSizes.size20,
+                            color: AppColors.text2,
+                          ),
                         ),
                       ),
                     ),
@@ -54,7 +64,7 @@ class _RegisterScreenState extends State<RegisterScreen> {
                       width: 200,
                       height: 200,
                       decoration: BoxDecoration(
-                        color: AppColors.primaryColor.withOpacity(0.1),
+                        color: AppColors.primaryColor,
                         shape: BoxShape.circle,
                       ),
                       child: Image.asset(AppAssets.REGISTER),
@@ -65,7 +75,7 @@ class _RegisterScreenState extends State<RegisterScreen> {
                     Text(
                       'Complete Profile'.tr,
                       style: const TextStyle(
-                        color: Colors.black,
+                        color: Colors.white,
                         fontSize: 22,
                         fontWeight: FontWeight.bold,
                       ),
@@ -76,7 +86,7 @@ class _RegisterScreenState extends State<RegisterScreen> {
                     Text(
                       "Enter your name to complete your profile setup".tr,
                       style: const TextStyle(
-                        color: Colors.black,
+                        color: Colors.white,
                         fontSize: 14,
                         fontWeight: FontWeight.bold,
                       ),
@@ -88,7 +98,7 @@ class _RegisterScreenState extends State<RegisterScreen> {
                     Container(
                       padding: const EdgeInsets.all(28),
                       decoration: BoxDecoration(
-                        color: Colors.black.withOpacity(0.05),
+                        color: Colors.white,
                         borderRadius: BorderRadius.circular(12),
                       ),
                       child: Column(

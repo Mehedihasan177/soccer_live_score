@@ -69,7 +69,13 @@ class _StandingLeaguesScreenState extends State<StandingLeaguesScreen> {
                                     data: standingController.leagues,
                                     standingController: standingController,
                                   )
-                        : const Center(),
+                        :  Center(
+                      child: SizedBox(
+                        height: 60,
+                        width: 60,
+                        child: Image.asset(AppAssets.loading),
+                      ),
+                    ),
                   ),
                 ),
                 if (!standingController.isLoading.value)

@@ -26,6 +26,11 @@ import '/views/screens/splash_screen.dart';
 import 'controllers/auth_controller.dart';
 
 main() async {
+  SystemChrome.setSystemUIOverlayStyle(SystemUiOverlayStyle(
+    statusBarColor: AppColors.blue,
+    statusBarIconBrightness: Brightness.light,
+    statusBarBrightness: Brightness.dark,// status bar color
+  ));
   WidgetsFlutterBinding.ensureInitialized();
   OneSignal.shared.setLogLevel(OSLogLevel.none, OSLogLevel.none);
   OneSignal.shared.setAppId('2021f458-ce93-465c-979b-34a6ff164320');

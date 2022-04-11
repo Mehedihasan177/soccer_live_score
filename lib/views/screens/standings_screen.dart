@@ -39,15 +39,16 @@ class _StandingsScreenState extends State<StandingsScreen> {
     return Scaffold(
       appBar: AppBar(
         systemOverlayStyle: AppStyles.appbarOverlay(),
-        leading: BackButton(color: Colors.white),
+        leading: BackButton(color: Colors.black),
         backgroundColor: AppColors.blue,
         title: widget.arguments['title'].length > 25
-            ? SizedBox(
-                height: 20,
+            ? Container(
+                height: 28,
+                // color: Colors.red,
                 child: Marquee(
                   text: widget.arguments['title'],
                   style: const TextStyle(
-                      fontWeight: FontWeight.bold, color: Colors.white),
+                      fontWeight: FontWeight.bold, color: Colors.black, fontSize: 20),
                   scrollAxis: Axis.horizontal,
                   crossAxisAlignment: CrossAxisAlignment.start,
                   blankSpace: 20.0,
@@ -62,7 +63,7 @@ class _StandingsScreenState extends State<StandingsScreen> {
               )
             : Text(
                 widget.arguments['title'],
-                style: TextStyle(color: Colors.white),
+                style: TextStyle(color: Colors.black),
               ),
         centerTitle: true,
         elevation: 0,

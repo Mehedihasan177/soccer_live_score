@@ -223,10 +223,10 @@ class AppStyles {
   }
 
   static SystemUiOverlayStyle appbarOverlay() {
-    return const SystemUiOverlayStyle(
-      statusBarColor: AppColors.background,
-      statusBarIconBrightness: Brightness.dark,
-      statusBarBrightness: Brightness.light,
+    return SystemUiOverlayStyle(
+      statusBarColor: AppColors.blue,
+      statusBarIconBrightness: Brightness.light,
+      statusBarBrightness: Brightness.dark,
     );
   }
 }

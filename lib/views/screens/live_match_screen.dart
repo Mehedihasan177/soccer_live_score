@@ -58,7 +58,7 @@ class _LiveMatchScreenState extends State<LiveMatchScreen> {
                               'No match is live now, Try after sometime. \n Thanks!'
                                   .tr,
                               style: AppStyles.heading.copyWith(
-                                color: Colors.white,
+                                color: Colors.black,
                               ),
                               textAlign: TextAlign.center,
                             ),
