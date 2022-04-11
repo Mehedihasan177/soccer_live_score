@@ -7,38 +7,44 @@ class FootballNews {
     if (json['news'] != null) {
       news = <News>[];
       json['news'].forEach((v) {
-        news!.add(News.fromJson(v));
+        news!.add(new News.fromJson(v));
       });
     }
   }
 
   Map<String, dynamic> toJson() {
-    final Map<String, dynamic> data = <String, dynamic>{};
-    if (news != null) {
-      data['news'] = news!.map((v) => v.toJson()).toList();
+    final Map<String, dynamic> data = new Map<String, dynamic>();
+    if (this.news != null) {
+      data['news'] = this.news!.map((v) => v.toJson()).toList();
     }
     return data;
   }
 }
 
 class News {
-  String? image;
-  String? title;
   String? link;
+  String? image;
+  String? titles;
+  String? summary;
+  String? time;
 
-  News({this.image, this.title, this.link});
+  News({this.link, this.image, this.titles, this.summary, this.time});
 
   News.fromJson(Map<String, dynamic> json) {
-    image = json['image'];
-    title = json['title'];
     link = json['link'];
+    image = json['image'];
+    titles = json['titles'];
+    summary = json['summary'];
+    time = json['time'];
   }
 
   Map<String, dynamic> toJson() {
-    final Map<String, dynamic> data = <String, dynamic>{};
-    data['image'] = image;
-    data['title'] = title;
-    data['link'] = link;
+    final Map<String, dynamic> data = new Map<String, dynamic>();
+    data['link'] = this.link;
+    data['image'] = this.image;
+    data['titles'] = this.titles;
+    data['summary'] = this.summary;
+    data['time'] = this.time;
     return data;
   }
 }

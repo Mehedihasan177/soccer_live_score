@@ -1,33 +1,33 @@
 {
   "project_info": {
-    "project_number": "933038733461",
-    "project_id": "big-soccer",
-    "storage_bucket": "big-soccer.appspot.com"
+    "project_number": "192641677588",
+    "project_id": "bong-da-live-k9",
+    "storage_bucket": "bong-da-live-k9.appspot.com"
   },
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:933038733461:android:4097f5d64885c3fd09839c",
+        "mobilesdk_app_id": "1:192641677588:android:4eab4064eaa8f64fb4ea01",
         "android_client_info": {
-          "package_name": "com.joker123usd.bigsoccer"
+          "package_name": "com.dootvball.bongdalivek9"
         }
       },
       "oauth_client": [
         {
-          "client_id": "933038733461-s834u2k8be74or6hlffvgi0kdfjoaksn.apps.googleusercontent.com",
+          "client_id": "192641677588-ko6ve0qhq1lvfifn0299fvmh4oompm75.apps.googleusercontent.com",
           "client_type": 3
         }
       ],
       "api_key": [
         {
-          "current_key": "AIzaSyAQMinHmwYow1oG3wdR--P7rnaikduaA2U"
+          "current_key": "AIzaSyBtFbpLRatjrDUIm0YrW1NMrbKSUcpbc3g"
         }
       ],
       "services": {
         "appinvite_service": {
           "other_platform_oauth_client": [
             {
-              "client_id": "933038733461-s834u2k8be74or6hlffvgi0kdfjoaksn.apps.googleusercontent.com",
+              "client_id": "192641677588-ko6ve0qhq1lvfifn0299fvmh4oompm75.apps.googleusercontent.com",
               "client_type": 3
             }
           ]

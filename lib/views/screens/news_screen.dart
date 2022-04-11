@@ -50,7 +50,7 @@ Widget newsItemWidget(context, News newsItem) {
   return InkWell(
     onTap: () {
       var arguments = {
-        'newsTitle': newsItem.title ?? '',
+        'newsTitle': newsItem.titles ?? '',
         'newsImage': newsItem.image ?? '',
         'newsURL': newsItem.link ?? '',
       };
@@ -90,7 +90,7 @@ Widget newsItemWidget(context, News newsItem) {
                       SizedBox(
                         height: AppSizes.newSize(9.0),
                         child: Text(
-                          newsItem.title ?? '',
+                          newsItem.titles ?? '',
                           style: TextStyle(
                             fontWeight: FontWeight.w400,
                             fontSize: AppSizes.size14,
@@ -103,11 +103,11 @@ Widget newsItemWidget(context, News newsItem) {
                       Container(
                         alignment: Alignment.bottomLeft,
                         height: AppSizes.newSize(3.2),
-                        child: const Text(
-                          '',
+                        child:  Text(
+                          newsItem.time.toString(),
                           style: TextStyle(
-                            fontWeight: FontWeight.normal,
-                            color: AppColors.text,
+                            fontWeight: FontWeight.bold,
+                            color: AppColors.blue1,
                           ),
                           textAlign: TextAlign.start,
                         ),

@@ -104,7 +104,8 @@ class _WatchScreenState extends State<WatchScreen> {
       key: _scaffoldKey,
       backgroundColor: AppColors.background,
       appBar: AppBar(
-        backgroundColor: Colors.transparent,
+        leading: BackButton(color: Colors.white,),
+        backgroundColor: AppColors.blue1,
         elevation: 0,
         iconTheme: const IconThemeData(color: Colors.white),
         title: Text(

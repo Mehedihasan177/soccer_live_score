@@ -1,9 +1,9 @@
 // ignore_for_file: constant_identifier_names
 
 class AppConsts {
-  static const String BASE_URL = 'http://joker123usd.com';
+  static const String BASE_URL = 'https://dootvball.com';
   static const String API_KEY = "r683c1e785253fwin1688c75395a4245fe94f003f5318665b73c8d";
-  static const String APP_ID = "1648744965_1146297387";
+  static const String APP_ID = "1649661243_502566228";
   static const String SETTINGS = "/api/v1/settings/";
   static const String ADD_USER = "/api/v1/add_user/";
 
@@ -19,9 +19,9 @@ class AppConsts {
   static const String standingYear = "/api/v1/football/standing/year";
   static const String standing = "/api/v1/football/standing/details";
 
-  static const String NEWS = "/football/keila-news/p01/news.php";
+  static const String NEWS = "/football/bongda24h/news.php";
   static const String NEWS_DETAILS =
-      "https://joker123usd.com/football/keila-news/p01/dt2/news_dtls.php?url=";
+      "https://dootvball.com/football/mysportmyanmar/details_news.php?url=";
   static const String predictions = "/api/v1/predictions/";
   static const String LIVE_MATCHES = "/api/v1/live_matches/";
 

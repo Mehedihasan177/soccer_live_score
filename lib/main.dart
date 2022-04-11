@@ -33,7 +33,7 @@ main() async {
   ));
   WidgetsFlutterBinding.ensureInitialized();
   OneSignal.shared.setLogLevel(OSLogLevel.none, OSLogLevel.none);
-  OneSignal.shared.setAppId('2021f458-ce93-465c-979b-34a6ff164320');
+  OneSignal.shared.setAppId('e128c805-5671-4d53-ab37-a6da34ecd77b');
   OneSignal.shared.promptUserForPushNotificationPermission().then((accepted) {
     print("Accepted permission: $accepted");
   });
@@ -56,7 +56,7 @@ main() async {
           secondary: AppColors.primaryColor,
         ),
       ),
-      title: 'Live Soccer Score',
+      title: 'BÓNG ĐÁ LIVE K9',
       onInit: () {
         Get.put(AuthController());
         Get.put(SettingController());

@@ -422,7 +422,7 @@ class _PredictionScreenState extends State<PredictionScreen> {
                         child: Text(
                           'No prediction available.'.tr,
                           style: TextStyle(
-                            color: AppColors.text2,
+                            color: AppColors.text,
                             fontWeight: FontWeight.w400,
                             fontSize: AppSizes.size16,
                           ),
@@ -433,7 +433,7 @@ class _PredictionScreenState extends State<PredictionScreen> {
                   )
             : const Center(
                 child: CircularProgressIndicator(
-                  color: Colors.white,
+                  color: Colors.black,
                 ),
               );
       }),

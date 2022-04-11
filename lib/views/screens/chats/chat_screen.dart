@@ -226,7 +226,7 @@ class _ChatState extends State<Chat> {
                   horizontal: 20.0,
                   vertical: 10.0,
                 ),
-                color: Theme.of(context).backgroundColor,
+                color: AppColors.blue1,
                 child: Row(
                   children: <Widget>[
                     Expanded(
@@ -266,11 +266,7 @@ class _ChatState extends State<Chat> {
                       child: Center(
                         child: Icon(
                           Icons.send,
-                          color: Theme.of(context)
-                              .textTheme
-                              .bodyText2!
-                              .color!
-                              .withOpacity(0.2),
+                          color: Colors.white,
                           size: AppSizes.newSize(4),
                         ),
                       ),

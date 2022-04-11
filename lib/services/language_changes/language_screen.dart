@@ -22,7 +22,7 @@ class _LanguageScreenState extends State<LanguageScreen> {
       backgroundColor: AppColors.blue,
       appBar: AppBar(
         elevation: 0,
-        backgroundColor: AppColors.blue,
+        backgroundColor: AppColors.blue1,
         leading: BackButton(
           color: Colors.white,
         ),
@@ -93,7 +93,7 @@ class LanguageWidget extends StatelessWidget {
                 style: TextStyle(
                   fontSize: 16,
                   // color: Theme.of(context).textTheme.bodyText2!.color,
-                  color: Colors.white
+                  color: Colors.black
                 ),
               ),
               if (isSelected)
@@ -101,7 +101,7 @@ class LanguageWidget extends StatelessWidget {
                   Icons.check,
                   size: 20,
                   // color: Theme.of(context).textTheme.bodyText2!.color,
-                  color: Colors.white,
+                  color: Colors.black,
                 ),
             ],
           ),

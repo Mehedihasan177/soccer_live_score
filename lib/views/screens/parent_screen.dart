@@ -26,7 +26,8 @@ class ParentScreen extends StatefulWidget {
   _ParentScreenState createState() => _ParentScreenState();
 }
 
-class _ParentScreenState extends State<ParentScreen> {
+class _ParentScreenState extends State<ParentScreen>
+    with TickerProviderStateMixin {
   SettingController settingsController = Get.find<SettingController>();
   final GlobalKey<ScaffoldState> _scaffoldKey = GlobalKey<ScaffoldState>();
   int _selectedIndex = 0;
@@ -43,79 +44,95 @@ class _ParentScreenState extends State<ParentScreen> {
     super.initState();
 
     CustomInterstitialAd.load();
+    print("settingsController.appPublishingControl.value");
+    print(settingsController.appPublishingControl.value);
   }
 
   @override
   Widget build(BuildContext context) {
-    return DefaultTabController(
+    return Obx(() => DefaultTabController(
       initialIndex: 0,
-      length: 6,
+      length: (settingsController.appPublishingControl.value == true) ? 6 : 5,
       child: Scaffold(
         key: _scaffoldKey,
-        appBar: myAppBar("Big Soccer",null, [
+        appBar: myAppBar("BÓNG ĐÁ LIVE K9", null, [
           Tab(
-          iconMargin: EdgeInsets.only(bottom: 2),
-              icon: Image.asset(
-          'assets/images/home.png',
-          height: 18,
-          width:  18,
-          color: Colors.white,
-        ),
-            child: GlobalText("Home".tr),
-          ),
-          if ((settingsController.appPublishingControl.value))
-            Tab(
-                iconMargin: EdgeInsets.only(bottom: 2),
-                icon: Image.asset(
-              'assets/images/video.png',
+            iconMargin: EdgeInsets.only(bottom: 2),
+            icon: Image.asset(
+              'assets/images/home.png',
               height: 18,
               width: 18,
               color: Colors.white,
-            ),  child: GlobalText("Live".tr),),
-          Tab(
+            ),
+            child: GlobalText("Home".tr),
+          ),
+          if ((settingsController.appPublishingControl.value == true))
+            Tab(
               iconMargin: EdgeInsets.only(bottom: 2),
               icon: Image.asset(
-            'assets/images/prediction.png',
-            height: 18,
-            width: 18,
-            color: Colors.white,
-          ), child: GlobalText("Prediction".tr),),
+                'assets/images/video.png',
+                height: 18,
+                width: 18,
+                color: Colors.white,
+              ),
+              child: GlobalText("Live".tr),
+            ),
           Tab(
-              iconMargin: EdgeInsets.only(bottom: 2),
-              icon: Image.asset(
-            'assets/images/standings.png',
-            height: 18,
-            width:  18,
-            color: Colors.white,
-          ),  child: GlobalText("Standings".tr),),
+            iconMargin: EdgeInsets.only(bottom: 2),
+            icon: Image.asset(
+              'assets/images/prediction.png',
+              height: 18,
+              width: 18,
+              color: Colors.white,
+            ),
+            child: GlobalText("Prediction".tr),
+          ),
           Tab(
-              iconMargin: EdgeInsets.only(bottom: 2),
-              icon: Image.asset(
-            'assets/images/news.png',
-            height: 18,
-            width:  18,
-            color: Colors.white,
-          ),  child: GlobalText("News".tr),),
+            iconMargin: EdgeInsets.only(bottom: 2),
+            icon: Image.asset(
+              'assets/images/standings.png',
+              height: 18,
+              width: 18,
+              color: Colors.white,
+            ),
+            child: GlobalText("Standings".tr),
+          ),
           Tab(
-              iconMargin: EdgeInsets.only(bottom: 2),
-              icon: Image.asset(
-            'assets/images/more.png',
-            height: 18,
-            width:  18,
-            color: Colors.white,
-          ),  child: GlobalText("More".tr),),]),
-        body:  DoubleBackToCloseApp(
+            iconMargin: EdgeInsets.only(bottom: 2),
+            icon: Image.asset(
+              'assets/images/news.png',
+              height: 18,
+              width: 18,
+              color: Colors.white,
+            ),
+            child: GlobalText("News".tr),
+          ),
+          Tab(
+            iconMargin: EdgeInsets.only(bottom: 2),
+            icon: Image.asset(
+              'assets/images/more.png',
+              height: 18,
+              width: 18,
+              color: Colors.white,
+            ),
+            child: GlobalText("More".tr),
+          ),
+        ]),
+        body: DoubleBackToCloseApp(
           snackBar: SnackBar(
             backgroundColor: Colors.white,
-            content: Text('Press again to close the app.', style: TextStyle(color: Colors.black, fontWeight: FontWeight.bold),),
+            content: Text(
+              'Press again to close the app.',
+              style:
+              TextStyle(color: Colors.black, fontWeight: FontWeight.bold),
+            ),
           ),
           child: Container(
             child: TabBarView(
-              physics: NeverScrollableScrollPhysics(),
               children: [
                 const HomeScreen(),
-                if ((settingsController.appPublishingControl.value))
-                  const LiveMatchScreen(),
+                if ((settingsController.appPublishingControl.value == true))
+                  LiveMatchScreen(),
                 const PredictionScreen(),
                 const StandingLeaguesScreen(),
                 const NewsScreen(),
@@ -124,121 +141,11 @@ class _ParentScreenState extends State<ParentScreen> {
             ),
           ),
         ),
-        // bottomNavigationBar: Theme(
-        //   data: Theme.of(context).copyWith(
-        //     canvasColor: Colors.transparent,
-        //   ),
-        //   child: Obx(() {
-        //     return Container(
-        //       color: Color.fromARGB(255, 188, 184, 184),
-        //       margin: const EdgeInsets.only(top: 0.2),
-        //       child: SalomonBottomBar(
-        //         selectedItemColor: Colors.black,
-        //         unselectedItemColor: AppColors.primaryColor,
-        //         currentIndex: _selectedIndex,
-        //         onTap: _onItemTapped,
-        //         itemPadding: const EdgeInsets.symmetric(
-        //           vertical: 6,
-        //           horizontal: 10,
-        //         ),
-        //         items: <SalomonBottomBarItem>[
-        //           SalomonBottomBarItem(
-        //             icon: Padding(
-        //               padding: const EdgeInsets.all(2.0),
-        //               child: Image.asset(
-        //                 'assets/images/home.png',
-        //                 height: 22,
-        //                 width: 22,
-        //                 color: Colors.black,
-        //               ),
-        //             ),
-        //             title: Text(
-        //               'Home',
-        //               style: TextStyle(fontSize: AppSizes.size12),
-        //             ),
-        //           ),
-        //           if ((settingsController.appPublishingControl.value))
-        //             SalomonBottomBarItem(
-        //               icon: Padding(
-        //                 padding: const EdgeInsets.all(2.0),
-        //                 child: Image.asset(
-        //                   'assets/images/video.png',
-        //                   height: 22,
-        //                   width: 22,
-        //                   color: Colors.black,
-        //                 ),
-        //               ),
-        //               title: Text(
-        //                 'Live',
-        //                 style: TextStyle(fontSize: AppSizes.size12),
-        //               ),
-        //             ),
-        //           SalomonBottomBarItem(
-        //             icon: Padding(
-        //               padding: const EdgeInsets.all(2.0),
-        //               child: Image.asset(
-        //                 'assets/images/prediction.png',
-        //                 height: 22,
-        //                 width: 22,
-        //                 color: Colors.black,
-        //               ),
-        //             ),
-        //             title: Text(
-        //               'Prediction',
-        //               style: TextStyle(fontSize: AppSizes.size12),
-        //             ),
-        //           ),
-        //           SalomonBottomBarItem(
-        //             icon: Padding(
-        //               padding: const EdgeInsets.all(2.0),
-        //               child: Image.asset(
-        //                 'assets/images/standings.png',
-        //                 height: 22,
-        //                 width: 22,
-        //                 color: Colors.black,
-        //               ),
-        //             ),
-        //             title: Text(
-        //               'Standings',
-        //               style: TextStyle(fontSize: AppSizes.size12),
-        //             ),
-        //           ),
-        //           SalomonBottomBarItem(
-        //             icon: Padding(
-        //               padding: const EdgeInsets.all(2.0),
-        //               child: Image.asset(
-        //                 'assets/images/news.png',
-        //                 height: 22,
-        //                 width: 22,
-        //                 color: Colors.black,
-        //               ),
-        //             ),
-        //             title: Text(
-        //               'News',
-        //               style: TextStyle(fontSize: AppSizes.size12),
-        //             ),
-        //           ),
-        //           SalomonBottomBarItem(
-        //             icon: Padding(
-        //               padding: const EdgeInsets.all(2.0),
-        //               child: Image.asset(
-        //                 'assets/images/more.png',
-        //                 height: 22,
-        //                 width: 22,
-        //                 color: Colors.black,
-        //               ),
-        //             ),
-        //             title: Text(
-        //               'More',
-        //               style: TextStyle(fontSize: AppSizes.size12),
-        //             ),
-        //           ),
-        //         ],
-        //       ),
-        //     );
-        //   }),
-        // ),
+        bottomNavigationBar: Container(
+          padding: EdgeInsets.only(left: 15, right: 15),
+          child: CustomBannerAd(),
+        ),
       ),
-    );
+    ));
   }
 }

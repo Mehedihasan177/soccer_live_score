@@ -53,52 +53,67 @@ class _MoreScreenState extends State<MoreScreen> {
               ],
             );
           }),
-          Container(
-            margin: const EdgeInsets.only(bottom: 6),
-            padding: const EdgeInsets.symmetric(vertical: 6),
-            child: Text(
-              "Language".tr,
-              style: TextStyle(
-                color: Colors.black,
-                fontSize: AppSizes.size16,
-                fontWeight: FontWeight.bold,
+          InkWell(
+            onTap: () {
+              Get.to(() => const LanguageScreen());
+            },
+            child: Container(
+              decoration: BoxDecoration(
+                borderRadius: BorderRadius.circular(4),
+                // ignore: prefer_const_literals_to_create_immutables
+                boxShadow: [
+                  const BoxShadow(
+                    color: AppColors.background2,
+                  ),
+                ],
               ),
-            ),
-          ),
-          Container(
-            decoration: BoxDecoration(
-              borderRadius: BorderRadius.circular(4),
-              // ignore: prefer_const_literals_to_create_immutables
-              boxShadow: [
-                const BoxShadow(
-                  color: AppColors.background2,
-                ),
-              ],
-            ),
-            child: ListView.separated(
-                    shrinkWrap: true,
-                    //controller: _scrollController,
-                    itemCount: LocalizationService.langs.length,
-                    itemBuilder: (context, index) {
-                      var data = LocalizationService.langs[index];
+              margin: const EdgeInsets.symmetric(vertical: 12),
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: [
 
-                      return LanguageWidget(
-                        name: data,
-                        isSelected: data == settingController.currentLanguage.value,
-                        callback: () {
-                          settingController.currentLanguage.value = data;
-                          LocalizationService().changeLocale(data);
-                        },
-                      );
-                    },
-              separatorBuilder: (BuildContext context, int index) { return Container(
-              margin: const EdgeInsets.symmetric(vertical: 6),
-              height: 0.1,
-              color: Colors.black,
-            ); },
+                  Row(
+                    children: [
+                      const SizedBox(width: 7),
+                      Image.asset(AppAssets.Languages, height: 29,),
+                      const SizedBox(width: 10),
+                      Column(
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: [
+                          Text(
+                            'Language'.tr,
+                            style: TextStyle(
+                              fontSize: AppSizes.size15,
+                              color: Colors.black,
+                              fontWeight: FontWeight.normal,
+                            ),
+                          ),
+                          Obx(() {
+                            return Text(
+                              settingController.currentLanguage.value,
+                              style: TextStyle(
+                                fontSize: AppSizes.size13,
+                                color: Colors.black.withOpacity(0.7),
+                                fontWeight: FontWeight.normal,
+                              ),
+                            );
+                          }),
+                        ],
+                      ),
+                    ],
+                  ),
+                  Padding(
+                    padding: const EdgeInsets.only(right: 8),
+                    child: Icon(
+                      Icons.arrow_forward_ios,
+                      size: 15,
+                      color: Colors.black,
+                    ),
                   ),
 
-
+                ],
+              ),
+            ),
           ),
 
           Container(
@@ -245,68 +260,4 @@ class _MoreScreenState extends State<MoreScreen> {
     );
   }
 
-}
-class LanguageWidget extends StatelessWidget {
-  const LanguageWidget({
-    Key? key,
-    required this.isSelected,
-    required this.name,
-    this.callback,
-  }) : super(key: key);
-
-  final bool isSelected;
-  final String name;
-  final callback;
-
-  @override
-  Widget build(BuildContext context) {
-    return InkWell(
-      onTap: callback,
-      child: Container(
-        padding: const EdgeInsets.symmetric(
-          vertical: 10,
-        ).copyWith(right: 15, left: 5),
-        margin: const EdgeInsets.only(left: 3),
-        decoration: BoxDecoration(
-          border: Border(
-            bottom: BorderSide(
-              width: 0.2,
-              color: Colors.white,
-            ),
-          ),
-        ),
-        child: Row(
-          mainAxisAlignment: MainAxisAlignment.start,
-          children: [
-            Expanded(
-                flex: 1,
-                child: Image.asset(AppAssets.Languages,height: 30,)),
-            SizedBox(width: 10,),
-            Expanded(
-              flex: 10,
-              child: Text(
-                name,
-                style: TextStyle(
-                    fontSize: 16,
-                    // color: Theme.of(context).textTheme.bodyText2!.color,
-                    color: Colors.black
-                ),
-              ),
-            ),
-            if (isSelected)
-              Expanded(
-                flex: 1,
-                child: Icon(
-                  Icons.check,
-                  size: 20,
-                  // color: Theme.of(context).textTheme.bodyText2!.color,
-                  color: Colors.black,
-                ),
-              ),
-          ],
-        ),
-
-      ),
-    );
-  }
 }

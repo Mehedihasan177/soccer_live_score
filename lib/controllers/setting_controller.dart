@@ -15,13 +15,14 @@ class SettingController extends GetxController {
   var interstitialPlacementId = ''.obs;
   var promotionSliderIndex = 0.obs;
   var showRating = true.obs;
-  var appPublishingControl = true.obs;
+  // var appPublishingControl = true.obs;
+  RxBool appPublishingControl = true.obs;
   var isDontShow = false.obs;
   RxBool notification = true.obs;
   RxInt sliderIndex = 0.obs;
   var screenIndex = 0.obs;
   RxInt currentTheme = 0.obs;
-  RxString currentLanguage = 'Khmer'.obs;
+  RxString currentLanguage = 'English'.obs;
   RxBool isNew = true.obs;
   RxString appName = ''.obs;
   RxString appAddsControl = ''.obs;
@@ -57,6 +58,7 @@ class SettingController extends GetxController {
     appName.value = packageInfo.appName;
     appAddsControl.value = setting.data!.adsControl ?? '';
   }
+
 
   // getAppStatus() {
   //   var box = GetStorage();

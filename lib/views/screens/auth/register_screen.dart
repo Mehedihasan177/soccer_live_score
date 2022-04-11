@@ -52,7 +52,7 @@ class _RegisterScreenState extends State<RegisterScreen> {
                           child: Icon(
                             Icons.arrow_back,
                             size: AppSizes.size20,
-                            color: AppColors.text2,
+                            color: AppColors.text,
                           ),
                         ),
                       ),
@@ -75,7 +75,7 @@ class _RegisterScreenState extends State<RegisterScreen> {
                     Text(
                       'Complete Profile'.tr,
                       style: const TextStyle(
-                        color: Colors.white,
+                        color: Colors.black,
                         fontSize: 22,
                         fontWeight: FontWeight.bold,
                       ),
@@ -86,7 +86,7 @@ class _RegisterScreenState extends State<RegisterScreen> {
                     Text(
                       "Enter your name to complete your profile setup".tr,
                       style: const TextStyle(
-                        color: Colors.white,
+                        color: Colors.black,
                         fontSize: 14,
                         fontWeight: FontWeight.bold,
                       ),

@@ -1,8 +1,7 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.joker123usd.bigsoccer">
+    package="com.dootvball.bongdalivek9">
    <application
-        android:label="Big Soccer"
-        android:name="${applicationName}"
+        android:label="BÓNG ĐÁ LIVE K9"
         android:icon="@mipmap/ic_launcher"
         android:usesCleartextTraffic="true">
         <activity

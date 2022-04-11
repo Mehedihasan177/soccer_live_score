@@ -93,7 +93,7 @@ class _OtpScreenState extends State<OtpScreen> {
                         child: Icon(
                           Icons.arrow_back,
                           size: AppSizes.size20,
-                          color: Colors.white,
+                          color: Colors.black,
                         ),
                       ),
                     ),
@@ -118,7 +118,7 @@ class _OtpScreenState extends State<OtpScreen> {
                   Text(
                     'Confirm Phone Number'.tr,
                     style: const TextStyle(
-                      color: Colors.white,
+                      color: Colors.black,
                       fontSize: 22,
                       fontWeight: FontWeight.bold,
                     ),
@@ -131,7 +131,7 @@ class _OtpScreenState extends State<OtpScreen> {
                         widget.arguments['phone'],
                     style: const TextStyle(
                       fontSize: 14,
-                      color: Colors.white,
+                      color: Colors.black,
                       fontWeight: FontWeight.bold,
                     ),
                     textAlign: TextAlign.center,
@@ -238,7 +238,7 @@ class _OtpScreenState extends State<OtpScreen> {
                                           width: 24,
                                           height: 24,
                                           child: CircularProgressIndicator(
-                                            color: AppColors.blue
+                                            color: AppColors.text
                                           ),
                                         ),
                                 );

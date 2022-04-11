@@ -66,7 +66,7 @@ class _PhoneScreenState extends State<PhoneScreen> {
                         'Get started with '.tr +
                             settingController.appName.value,
                         style: const TextStyle(
-                          color: Colors.white,
+                          color: Colors.black,
                           fontSize: 22,
                           fontWeight: FontWeight.bold,
                         ),
@@ -79,7 +79,7 @@ class _PhoneScreenState extends State<PhoneScreen> {
                       "Add your phone number. we'll send you a verification code so we know you're real"
                           .tr,
                       style: const TextStyle(
-                        color: Colors.white,
+                        color: Colors.black,
                         fontSize: 14,
                         fontWeight: FontWeight.bold,
                       ),
@@ -128,7 +128,7 @@ class _PhoneScreenState extends State<PhoneScreen> {
                                 padding:
                                     const EdgeInsets.symmetric(horizontal: 8),
                                 child: Text(
-                                  '(+855)',
+                                  '(+84)',
                                   style: TextStyle(
                                     fontSize: AppSizes.size15,
                                     color: Colors.black,
@@ -174,7 +174,7 @@ class _PhoneScreenState extends State<PhoneScreen> {
                               onPressed: () {
                                 if (_formKey.currentState!.validate()) {
                                   final phone =
-                                      '+855' + _phoneController.text.trim();
+                                      '+84' + _phoneController.text.trim();
 
                                   PhoneAuthService().login(phone, context);
                                 }
@@ -208,7 +208,7 @@ class _PhoneScreenState extends State<PhoneScreen> {
                                           width: 24,
                                           height: 24,
                                           child: CircularProgressIndicator(
-                                            color: AppColors.blue
+                                            color: AppColors.text
                                           ),
                                         ),
                                 );
