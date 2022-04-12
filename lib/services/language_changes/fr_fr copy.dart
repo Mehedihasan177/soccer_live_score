@@ -3,6 +3,7 @@
 
 const Map<String, String> viVI = {
   'Languages': 'Ngôn ngữ',
+  'Search': 'Tìm kiếm',
   'Language': 'Ngôn ngữ',
   'Meul Keila': 'BÓNG ĐÁ LIVE K9',
   'Live': 'Trực tiếp',

@@ -55,7 +55,7 @@ class _ParentScreenState extends State<ParentScreen>
       length: (settingsController.appPublishingControl.value == true) ? 6 : 5,
       child: Scaffold(
         key: _scaffoldKey,
-        appBar: myAppBar("BÓNG ĐÁ LIVE K9", null, [
+        appBar: myAppBar("BONG DA LIVE K9", null, [
           Tab(
             iconMargin: EdgeInsets.only(bottom: 2),
             icon: Image.asset(
@@ -118,16 +118,7 @@ class _ParentScreenState extends State<ParentScreen>
             child: GlobalText("More".tr),
           ),
         ]),
-        body: DoubleBackToCloseApp(
-          snackBar: SnackBar(
-            backgroundColor: Colors.white,
-            content: Text(
-              'Press again to close the app.',
-              style:
-              TextStyle(color: Colors.black, fontWeight: FontWeight.bold),
-            ),
-          ),
-          child: Container(
+        body: Container(
             child: TabBarView(
               children: [
                 const HomeScreen(),
@@ -140,7 +131,7 @@ class _ParentScreenState extends State<ParentScreen>
               ],
             ),
           ),
-        ),
+
         bottomNavigationBar: Container(
           padding: EdgeInsets.only(left: 15, right: 15),
           child: CustomBannerAd(),

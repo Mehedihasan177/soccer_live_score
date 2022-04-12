@@ -110,9 +110,9 @@ class _StandingLeaguesScreenState extends State<StandingLeaguesScreen> {
                           color: AppColors.text,
                         ),
                         controller: controller,
-                        decoration: const InputDecoration(
+                        decoration:  InputDecoration(
                           isDense: true,
-                          hintText: 'Search',
+                          hintText: 'Search'.tr,
                           hintStyle: TextStyle(
                             color: AppColors.text,
                           ),

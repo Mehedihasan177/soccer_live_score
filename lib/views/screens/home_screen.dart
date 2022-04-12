@@ -1,3 +1,4 @@
+import 'package:big_soccer/controllers/setting_controller.dart';
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
@@ -21,7 +22,7 @@ class HomeScreen extends StatefulWidget {
 class _HomeScreenState extends State<HomeScreen> {
   final DatePickerController _controller = DatePickerController();
   HomeController homeController = Get.put(HomeController());
-
+SettingController settingController = Get.find();
   @override
   void initState() {
     //homeController.isLoading.value;
@@ -53,6 +54,7 @@ class _HomeScreenState extends State<HomeScreen> {
               ),
               child: DatePicker(
                 DateTime.now().subtract(const Duration(days: 10)),
+                locale: settingController.currentLanguage.value == 'English' ? "en_US" : "vi_VI",
                 width: AppSizes.newSize(7),
                 height: AppSizes.newSize(6.5),
                 controller: _controller,

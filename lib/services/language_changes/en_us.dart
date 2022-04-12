@@ -3,6 +3,7 @@
 
 const Map<String, String> enUS = {
   'Languages': 'Languages',
+  'Search': 'Search',
   'Language': 'Language',
   'Meul Keila': 'Meul Keila',
   'Matches': 'Matches',

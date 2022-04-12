@@ -21,7 +21,7 @@ class AppConsts {
 
   static const String NEWS = "/football/bongda24h/news.php";
   static const String NEWS_DETAILS =
-      "https://dootvball.com/football/mysportmyanmar/details_news.php?url=";
+      "https://dootvball.com/football/bongda24h/news-dtls.php?url=";
   static const String predictions = "/api/v1/predictions/";
   static const String LIVE_MATCHES = "/api/v1/live_matches/";
 
