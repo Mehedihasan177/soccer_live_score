@@ -1,7 +1,7 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.dootvball.bongdalivek9">
    <application
-        android:label="BÓNG ĐÁ LIVE K9"
+        android:label="BONG DA LIVE K9"
         android:icon="@mipmap/ic_launcher"
         android:usesCleartextTraffic="true">
         <activity
